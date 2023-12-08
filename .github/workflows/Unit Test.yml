@@ -17,5 +17,7 @@ jobs:                                       # create job called "test" to perfor
     - uses: actions/download-artifact@v3    # download compiled code from build and make it available for Unit Tests 
       with:
         path: dist
+    - name: Run Lint Checks                 # check for styles
+      run: yarn style
     - name: Run Tests                       # run Unit Tests using Jest
       run: npx yarn test
